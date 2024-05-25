@@ -2,6 +2,7 @@ import React from 'react';
 import {cn} from "@/utilities/cn";
 import {SkillsInDevelopment, UpcomingCourses} from "@/utilities/types";
 import {TextGenerateEffect} from "@/components/ui/text-generate-effect";
+import {BackgroundBeams} from "@/components/ui/background-beams";
 
 
 interface Props {
@@ -11,8 +12,8 @@ interface Props {
 
 export const Screen2: React.FC<Props> = ({skills_in_development, upcoming_courses}) => {
     return (
-        <div className=" border-2 border-color-2 rounded-xl col-span-12 lg:col-span-5 grid grid-cols-5 p-2 gap-2 ">
-            <div className="col-span-3 flex  flex-col  h-[400px] ">
+        <div className="relative border-2 border-color-2 rounded-xl col-span-12 lg:col-span-5 grid grid-cols-5 p-2 gap-2 ">
+            <div className="col-span-3 flex  flex-col  h-[400px] relative z-10">
                 <TextGenerateEffect icon="icon4" words="Skills in Development"/>
 
                 {
@@ -39,7 +40,7 @@ export const Screen2: React.FC<Props> = ({skills_in_development, upcoming_course
                     {
                         skills_in_development?.map((skill, index) => {
                             return (
-                                <div key={index} className="flex items-center border border-color-2 rounded-lg py-2 pl-2 text-white mt-1 gap-2 overflow-hidden">
+                                <div key={index} className=" flex items-center border border-color-2 rounded-lg py-2 pl-2 text-white mt-1 gap-2 overflow-hidden">
                                     <h5 className="size-7 flex items-center justify-center border border-color-5 text-color-5 rounded-md">{skill.employees}</h5>
                                     <p className="text-sm text-color-3">{skill.skill}</p>
                                 </div>
@@ -48,7 +49,9 @@ export const Screen2: React.FC<Props> = ({skills_in_development, upcoming_course
                     }
                 </div>
             </div>
+            <BackgroundBeams />
         </div>
     );
 };
+
 

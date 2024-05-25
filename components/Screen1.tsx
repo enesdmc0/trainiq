@@ -4,7 +4,7 @@ import {cn} from "@/utilities/cn";
 import {AverageEmployeeScore, TopEmployees, TopSkills, TotalCompletedCourses, TotalEmployees} from "@/utilities/types";
 import {HeroHighlight} from "@/components/ui/hero-highlight";
 import {TextGenerateEffect} from "@/components/ui/text-generate-effect";
-
+import {Meteors} from "@/components/ui/meteors";
 interface Props {
     total_employees: TotalEmployees;
     total_completed_courses: TotalCompletedCourses;
@@ -62,7 +62,7 @@ export const Screen1: React.FC<Props> = ({
                                 ))}
                         </div>
 
-                        <div className="border border-color-2 rounded-lg col-span-3 p-2 ">
+                        <div className=" border border-color-2 rounded-lg col-span-3 p-2 ">
                             <TextGenerateEffect icon="icon1" words="Top Employees"/>
                             <div className="flex flex-col flex-1 gap-3 ">
                                 {
@@ -90,6 +90,7 @@ export const Screen1: React.FC<Props> = ({
                                 <div key={index} className="border border-color-2 flex items-center justify-center flex-col text-center flex-1 rounded-lg">
                                     <p className="text-color-3 font-bold lg:text-2xl">{value}</p>
                                     <p className="text-color-3 text-xs lg:text-xl font-medium">{key}</p>
+
                                 </div>
                             ))
                         }

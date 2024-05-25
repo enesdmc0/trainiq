@@ -7,6 +7,7 @@ import {
 } from "@/components";
 import {DashboardData} from "@/utilities/types";
 
+
 const Home = async ()  =>{
     const data: DashboardData | undefined = await fetcher("/case/dashboard")
 
@@ -31,7 +32,7 @@ const Home = async ()  =>{
 
 
     return (
-        <main className="min-h-screen bg-color-1 p-5">
+        <main className="min-h-screen bg-color-1 p-2 md:p-5">
 
             <div className="max-w-[1450px]  mx-auto grid grid-cols-12 gap-3">
                 <Screen1 top_skills={top_skills} top_employees={top_employees}
