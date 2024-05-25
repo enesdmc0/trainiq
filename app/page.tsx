@@ -11,6 +11,8 @@ import {DashboardData} from "@/utilities/types";
 const Home = async ()  =>{
     const data: DashboardData | undefined = await fetcher("/case/dashboard")
 
+
+
     if (!data) {
         return <div>There was an error fetching the data</div>
     }

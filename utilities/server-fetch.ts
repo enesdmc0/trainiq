@@ -9,7 +9,7 @@ export const fetcher = async (url: string): Promise<DashboardData | undefined> =
             throw new Error('Network response was not ok');
         }
 
-        const data: DashboardData = await response.json();
+        const {data} = await response.json();
         return data;
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
