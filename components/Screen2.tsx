@@ -33,7 +33,7 @@ export const Screen2: React.FC<Props> = ({skills_in_development, upcoming_course
                     ))
                 }
             </div>
-            <div className="relative col-span-2   overflow-y-auto   h-[400px] ">
+            <div className="relative col-span-2   overflow-y-auto scrollbar-hide  h-[400px] ">
                 <TextGenerateEffect icon="icon3" className="sticky top-0 bg-color-1" words="Skills in Development"/>
                 <div className="border border-color-2 rounded-lg p-2">
                     {

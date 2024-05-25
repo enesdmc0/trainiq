@@ -12,13 +12,12 @@ interface Props {
 export const Screen3: React.FC<Props> = ({in_progress_courses, activity_hours}) => {
     return (
         <div className=" border-2 col-span-12 lg:col-span-5 rounded-xl border-color-2 grid grid-cols-2 p-2 gap-3 h-[550px]">
-            <div className="col-span-1 overflow-y-auto">
+            <div className="col-span-1 overflow-y-auto scrollbar-hide">
                 <TextGenerateEffect icon="icon5" words="Activity Hours"/>
                 <div className="grid rounded-lg border-color-2 grid-cols-5 text-xs text-color-3  border p-2">
-                    <span className="col-span-2 underline text-color-5">date</span>
-                    <span className="underline text-color-5">hour</span>
-                    <span className="underline text-color-5">taken</span>
-                    <span className="underline text-color-5">completed</span>
+                    {["date", "hour", "taken", "compl."].map((item, index) => (
+                            <span key={index} className={cn("underline text-color-5", index === 0 ? "col-span-2" : "col-span-1")}>{item}</span>
+                        ))}
                 </div>
                 {activity_hours?.map((skill, index) => {
                     return (
@@ -34,7 +33,7 @@ export const Screen3: React.FC<Props> = ({in_progress_courses, activity_hours}) 
                 }
             </div>
 
-            <div className="flex flex-col relative  overflow-y-auto">
+            <div className="flex flex-col relative scrollbar-hide overflow-y-auto">
                 <TextGenerateEffect icon="icon3" className="sticky top-0 bg-color-1" words="In Progress Courses"/>
                 {
                     in_progress_courses?.map((skill, index) => (

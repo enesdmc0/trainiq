@@ -23,8 +23,8 @@ export const Screen4: React.FC<Props> = ({teams}) => {
 
     return (
         <div className=" col-span-12 lg:col-span-7 border-2 border-color-2 rounded-xl flex flex-col-reverse md:flex-row  h-[550px] p-2 gap-3">
-            <div className="flex-1 border border-color-2 rounded-lg p-2 overflow-y-auto gap-3 flex">
-                <div className="flex-1 text-color-4 space-y-5 overflow-y-auto border border-color-2 p-2 rounded-lg">
+            <div className="flex-1 border border-color-2 rounded-lg p-2 overflow-y-auto scrollbar-hide  gap-3 flex">
+                <div className="flex-1 text-color-4 space-y-5 overflow-y-auto scrollbar-hide border border-color-2 p-2 rounded-lg">
                     <p className="text-color-3 underline font-semibold text-center">{title}</p>
                     <span className="text-color-3 text-sm flex items-center gap-2">
                         <p className="underline">Overall Score:</p>
@@ -36,7 +36,7 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                   </span>
                     <p className="text-sm text-color-3">{description}</p>
                 </div>
-                <div className="flex-1  space-y-3 overflow-y-auto">
+                <div className="flex-1  space-y-3 overflow-y-auto scrollbar-hide">
                     {employees.map((employee, index) => (
                         <div key={index} className="border border-color-2 rounded-lg p-2 space-y-3">
                             <div key={index} className="flex flex-col gap-3">
@@ -66,7 +66,7 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                     ))}
                 </div>
             </div>
-            <div className="gap-3 flex md:flex-col m-auto overflow-y-auto">
+            <div className="gap-3 flex md:flex-col m-auto scrollbar-hide overflow-y-auto">
                 {
                     teamsTitles.map((team, index) => {
                         return (
