@@ -12,9 +12,12 @@ https://trainiq-self.vercel.app/
 
 ### App Description
 
-```react
+```
 Dashboard UI for TrainIQ
-This project is a single-page dashboard UI for TrainIQ, showcasing team and employee statistics for a learning platform. The dashboard displays data such as team structures, employee progress, and overall platform statistics using charts, graphs, and interactive elements. The UI includes dummy buttons for adding new teams and employees. The project is built using modern front-end technologies and fetches data from the provided API endpoint.
+This project is a single-page dashboard UI for TrainIQ, showcasing team and employee statistics for a learning platform.
+The dashboard displays data such as team structures, employee progress, and overall platform statistics using charts, graphs,
+and interactive elements. The UI includes dummy buttons for adding new teams and employees.
+The project is built using modern front-end technologies and fetches data from the provided API endpoint.
 ```
 
 
