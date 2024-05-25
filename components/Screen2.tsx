@@ -12,7 +12,7 @@ interface Props {
 
 export const Screen2: React.FC<Props> = ({skills_in_development, upcoming_courses}) => {
     return (
-        <div className="relative border-2 border-color-2 rounded-xl col-span-12 lg:col-span-5 grid grid-cols-5 p-2 gap-2 ">
+        <div className="animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] relative border-2 border-color-2 rounded-xl col-span-12 lg:col-span-5 grid grid-cols-5 p-2 gap-2 ">
             <div className="col-span-3 flex  flex-col  h-[400px] relative z-10">
                 <TextGenerateEffect icon="icon4" words="Skills in Development"/>
 
@@ -34,8 +34,8 @@ export const Screen2: React.FC<Props> = ({skills_in_development, upcoming_course
                     ))
                 }
             </div>
-            <div className="relative col-span-2   overflow-y-auto scrollbar-hide  h-[400px] ">
-                <TextGenerateEffect icon="icon3" className="sticky top-0 bg-color-1" words="Skills in Development"/>
+            <div className="relative z-50 col-span-2   overflow-y-auto scrollbar-hide  h-[400px] ">
+                <TextGenerateEffect icon="icon3" className="sticky top-0 bg-[#020305]" words="Skills in Development"/>
                 <div className="border border-color-2 rounded-lg p-2">
                     {
                         skills_in_development?.map((skill, index) => {

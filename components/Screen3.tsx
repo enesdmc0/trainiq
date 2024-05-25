@@ -12,7 +12,7 @@ interface Props {
 
 export const Screen3: React.FC<Props> = ({in_progress_courses, activity_hours}) => {
     return (
-        <div className=" border-2 col-span-12 lg:col-span-5 rounded-xl border-color-2  p-2  h-[550px]">
+        <div className="animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] border-2 col-span-12 lg:col-span-5 rounded-xl border-color-2  p-2  h-[550px]">
             <HeroHighlight className="grid grid-cols-2 gap-3 h-full">
                 <div className="col-span-1 overflow-y-auto scrollbar-hide">
                     <TextGenerateEffect icon="icon5" words="Activity Hours"/>
@@ -36,7 +36,7 @@ export const Screen3: React.FC<Props> = ({in_progress_courses, activity_hours}) 
                 </div>
 
                 <div className="flex flex-col relative scrollbar-hide overflow-y-auto">
-                    <TextGenerateEffect icon="icon3" className="sticky top-0 bg-color-1" words="In Progress Courses"/>
+                    <TextGenerateEffect icon="icon3" className="sticky top-0 bg-[#020305]" words="In Progress Courses"/>
                     {
                         in_progress_courses?.map((skill, index) => (
                             <div key={index}

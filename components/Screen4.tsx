@@ -3,6 +3,7 @@ import React from 'react';
 import {cn} from "@/utilities/cn";
 import {Teams} from "@/utilities/types";
 import {BackgroundBeams} from "@/components/ui/background-beams";
+
 interface Props {
     teams: Teams[]
 }
@@ -22,8 +23,10 @@ export const Screen4: React.FC<Props> = ({teams}) => {
     const {description, overall_score, title, total_employee_count, employees} =  activeTeamData
 
     return (
-        <div className="animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] relative col-span-12 lg:col-span-7 border-2 border-color-2 rounded-xl flex flex-col-reverse md:flex-row  h-[550px] p-2 gap-3">
-            <div className="flex-1 border border-color-2 rounded-lg p-2 overflow-y-auto scrollbar-hide  gap-3 flex">
+        <div
+            className="  animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] relative col-span-12 lg:col-span-7 border-2 border-color-2 rounded-xl flex flex-col-reverse md:flex-row  h-[550px] p-2 gap-3">
+            <div
+                className="relative z-50 flex-1 border border-color-2 rounded-lg p-2 overflow-y-auto scrollbar-hide  gap-3 flex">
                 <div className=" flex-1 text-color-4 space-y-5 overflow-y-auto scrollbar-hide border border-color-2 p-2 rounded-lg">
                     <p className="text-color-5 underline font-semibold text-center">{title}</p>
                     <span className="text-color-3 text-sm flex items-center gap-2">
@@ -66,18 +69,19 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                     ))}
                 </div>
             </div>
-            <div className="gap-3 flex md:flex-col m-auto scrollbar-hide overflow-y-auto">
-                {
-                    teamsTitles.map((team, index) => {
-                        return (
-                            <button key={index} onClick={() => setActiveTeam(index)}
-                                    className={cn("border p-1 md:p-2 text-xs text-color-3 font-medium flex items-center justify-center rounded-md w-full", activeTeam === index ? "border-color-5 " : "border-color-2")}>{team}</button>
-                        )
-                    })
-                }
-            </div>
-            <BackgroundBeams />
+            <div className="relative z-50 gap-3 flex md:flex-col m-auto scrollbar-hide overflow-y-auto">
+                {teamsTitles.map((team, index) => {
+                    return (
+                        <button key={index} onClick={() => setActiveTeam(index)}
+                                className={cn("border p-1 md:p-2 text-xs text-color-3 font-medium flex items-center justify-center rounded-md w-full", activeTeam === index ? "border-color-5 " : "border-color-2")}>{team}</button>
+                    )
+                })}
 
+                <button
+                        className={cn("border border-color-2 p-1   text-color-3 font-medium flex items-center justify-center rounded-md w-full",)}>+</button>
+
+            </div>
+            <BackgroundBeams/>
         </div>
     );
 };

@@ -33,7 +33,7 @@ export const Screen1: React.FC<Props> = ({
 
 
         return(
-            <div className="border-2 border-color-2  rounded-xl col-span-12 lg:col-span-7  p-2 ">
+            <div className="animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] border-2 border-color-2  rounded-xl col-span-12 lg:col-span-7  p-2 ">
                 <HeroHighlight className="grid grid-cols-5 h-full gap-2">
                     <div className="col-span-4 grid grid-cols-5 gap-2">
 
