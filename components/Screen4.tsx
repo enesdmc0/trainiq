@@ -22,8 +22,8 @@ export const Screen4: React.FC<Props> = ({teams}) => {
     const {description, overall_score, title, total_employee_count, employees} =  activeTeamData
 
     return (
-        <div className=" col-span-12 lg:col-span-7 border-2 border-color-2 rounded-xl flex h-[550px] p-2 gap-3">
-            <div className="flex-1 border border-color-2 rounded-lg p-2 gap-3 flex">
+        <div className=" col-span-12 lg:col-span-7 border-2 border-color-2 rounded-xl flex flex-col-reverse md:flex-row  h-[550px] p-2 gap-3">
+            <div className="flex-1 border border-color-2 rounded-lg p-2 overflow-y-auto gap-3 flex">
                 <div className="flex-1 text-color-4 space-y-5 overflow-y-auto border border-color-2 p-2 rounded-lg">
                     <p className="text-color-3 underline font-semibold text-center">{title}</p>
                     <span className="text-color-3 text-sm flex items-center gap-2">
@@ -57,7 +57,7 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                                     <div
                                         className="rounded-full whitespace-nowrap border border-color-3 text-[10px] py-px px-2 flex items-center justify-center gap-1 "
                                         key={index}>
-                                        <span className="size-2 rounded-full bg-color-3 "/>
+                                        <span className="size-2 rounded-full bg-color-5 "/>
                                         <p className="text-color-3 ">{skill}</p>
                                     </div>
                                 ))}
@@ -66,12 +66,12 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                     ))}
                 </div>
             </div>
-            <div className="space-y-3 m-auto">
+            <div className="gap-3 flex md:flex-col m-auto overflow-y-auto">
                 {
                     teamsTitles.map((team, index) => {
                         return (
                             <button key={index} onClick={() => setActiveTeam(index)}
-                                    className={cn("border  p-2 text-xs text-color-3 font-medium flex items-center justify-center rounded-md w-full", activeTeam === index ? "border-color-3 bg-color-2" : "border-color-2")}>{team}</button>
+                                    className={cn("border p-1 md:p-2 text-xs text-color-3 font-medium flex items-center justify-center rounded-md w-full", activeTeam === index ? "border-color-5 bg-color-2" : "border-color-2")}>{team}</button>
                         )
                     })
                 }

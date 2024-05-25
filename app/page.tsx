@@ -5,7 +5,6 @@ import {
     Screen3,
     Screen4
 } from "@/components";
-
 import {DashboardData} from "@/utilities/types";
 
 const Home = async ()  =>{
@@ -33,6 +32,7 @@ const Home = async ()  =>{
 
     return (
         <main className="min-h-screen bg-color-1 p-5">
+
             <div className="max-w-[1450px]  mx-auto grid grid-cols-12 gap-3">
                 <Screen1 top_skills={top_skills} top_employees={top_employees}
                          average_employee_score={average_employee_score} total_employees={total_employees}
@@ -40,7 +40,14 @@ const Home = async ()  =>{
                 <Screen2 skills_in_development={skills_in_development} upcoming_courses={upcoming_courses}/>
                 <Screen3 in_progress_courses={in_progress_courses} activity_hours={activity_hours}/>
                 <Screen4 teams={teams}/>
-            </div>
+        </div>
+
+
+
+
+
+
+
         </main>
     );
 }

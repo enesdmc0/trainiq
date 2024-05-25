@@ -1,4 +1,9 @@
 import type { Config } from "tailwindcss";
+const svgToDataUri = require("mini-svg-data-uri");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 
 const config: Config = {
   content: [
@@ -11,11 +16,39 @@ const config: Config = {
       colors: {
         "color-1": "#1e1e1e",
         "color-2": "#343434",
-        "color-3": "#a0a0a0",//basliklar
-        "color-4": "#ededed", //text
+        "color-3": "#a0a0a0",
+        "color-4": "#ededed",
+        "color-5": "#36996b"
       }
     },
   },
-  plugins: [],
+  plugins: [
+    addVariablesForColors,
+    function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+          {
+            "bg-dot-thick": (value: any) => ({
+              backgroundImage: `url("${svgToDataUri(
+                  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+              )}")`,
+            }),
+          },
+          { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },
+  ],
 };
+
 export default config;
+
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+      Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
