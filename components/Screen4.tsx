@@ -41,7 +41,7 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                 </div>
                 <div className="flex-1  space-y-3 overflow-y-auto scrollbar-hide">
                     <button
-                        className={cn("border border-color-5 p-1 text-color-3 font-medium flex items-center justify-center rounded-md w-full",)}>
+                        className={cn("border border-color-5 p-1 text-color-3 font-medium flex items-center text-xs md:text-base justify-center rounded-md w-full",)}>
                         + Create New People
                     </button>
                     {employees.map((employee, index) => (
