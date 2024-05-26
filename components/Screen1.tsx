@@ -1,10 +1,9 @@
-"use client"
 import React from 'react';
 import {cn} from "@/utilities/cn";
 import {AverageEmployeeScore, TopEmployees, TopSkills, TotalCompletedCourses, TotalEmployees} from "@/utilities/types";
 import {HeroHighlight} from "@/components/ui/hero-highlight";
 import {TextGenerateEffect} from "@/components/ui/text-generate-effect";
-import {Meteors} from "@/components/ui/meteors";
+
 interface Props {
     total_employees: TotalEmployees;
     total_completed_courses: TotalCompletedCourses;
@@ -28,12 +27,10 @@ export const Screen1: React.FC<Props> = ({
                 "Total Employees": total_employees,
                 "Total Completed Courses": total_completed_courses,
                 "Average Employee Score": average_employee_score,
-
             }
 
-
         return(
-            <div className="animate-shimmer  bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] border-2 border-color-2  rounded-xl col-span-12 lg:col-span-7  p-2 ">
+            <div className="border-2 border-color-2  rounded-xl col-span-12 lg:col-span-7  p-2 ">
                 <HeroHighlight className="grid grid-cols-5 h-full gap-2">
                     <div className="col-span-4 grid grid-cols-5 gap-2">
 

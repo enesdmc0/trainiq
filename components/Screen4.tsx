@@ -40,6 +40,10 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                     <p className="text-sm text-color-3">{description}</p>
                 </div>
                 <div className="flex-1  space-y-3 overflow-y-auto scrollbar-hide">
+                    <button
+                        className={cn("border border-color-5 p-1 text-color-3 font-medium flex items-center justify-center rounded-md w-full",)}>
+                        + Create New People
+                    </button>
                     {employees.map((employee, index) => (
                         <div key={index} className="border border-color-2 rounded-lg p-2 space-y-3">
                             <div key={index} className="flex flex-col gap-3">
@@ -70,15 +74,16 @@ export const Screen4: React.FC<Props> = ({teams}) => {
                 </div>
             </div>
             <div className="relative z-50 gap-3 flex md:flex-col m-auto scrollbar-hide overflow-y-auto">
+
                 {teamsTitles.map((team, index) => {
                     return (
                         <button key={index} onClick={() => setActiveTeam(index)}
                                 className={cn("border p-1 md:p-2 text-xs text-color-3 font-medium flex items-center justify-center rounded-md w-full", activeTeam === index ? "border-color-5 " : "border-color-2")}>{team}</button>
                     )
                 })}
-
                 <button
-                        className={cn("border border-color-2 p-1   text-color-3 font-medium flex items-center justify-center rounded-md w-full",)}>+</button>
+                    className={cn("border border-color-2 p-1   text-color-3 font-medium flex items-center justify-center rounded-md w-full",)}>+
+                </button>
 
             </div>
             <BackgroundBeams/>
